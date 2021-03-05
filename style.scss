@@ -247,14 +247,14 @@ img {
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-weight: bold;
-      margin: 1.5em 0;
+      margin: 5px 0;
       font-size: 0.8em;
     }
 
     .site-recents-post {
       $spacing: 5px;
       display: block;
-
+      padding-left: 10px;
       a {
         display: inline-block;
         padding: $spacing 0;

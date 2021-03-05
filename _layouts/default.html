@@ -53,7 +53,11 @@
           </div>
           {% endfor %}
           <div class="site-recents-label">HTML</div>
-          {% for post in site.categories.HTML %}
+          {% for post in site.categories.Recent limit:6 %}
+          <div class="site-recents-post">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </div>
+          {% endfor %} {% for post in site.categories.HTML %}
           <div class="site-recents-post">
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
           </div>

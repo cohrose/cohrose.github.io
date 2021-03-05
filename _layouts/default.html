@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>
+      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{
+      site.description }}
+    </title>
     {% include meta.html %}
     <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico" />
 
@@ -9,7 +12,11 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ site.baseurl }}/style.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap"
       rel="stylesheet"
@@ -32,21 +39,21 @@
         <div class="toggle-bar"></div>
       </div>
       <div class="masthead">
-        <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+        <h1 class="site-name">
+          <a href="{{ site.baseurl }}/">{{ site.name }}</a>
+        </h1>
         <p class="site-description">{{ site.description }}</p>
       </div>
       <div id="togglable" class="closed">
         <div class="site-recents">
           <div class="site-recents-label">Recent Posts</div>
           {% for post in site.posts limit:6 %}
-          <div class="site-recents-post"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+          <div class="site-recents-post">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </div>
           {% endfor %}
         </div>
         <div class="social">{% include svg-icons.html %}</div>
-        <div class="footer-links">
-          <a href="{{ site.baseurl }}/archive">Archives</a><br />
-          <a href="https://github.com/BinaryPatrick/BinaryPatrick.github.io">View Source</a>
-        </div>
       </div>
     </div>
     <div id="main" role="main">
@@ -55,5 +62,9 @@
 
     {% include analytics.html %} {% include js.html %}
   </body>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script
+    async
+    src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"
+  ></script>
 </html>

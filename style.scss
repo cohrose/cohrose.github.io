@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $notoSerif;
+  // font-family: $notoSerif;
   color: $darkerGray;
   font-weight: bold;
   line-height: 1.7;
@@ -272,7 +272,7 @@ img {
 //
 
 #main {
-  max-width: 700px;
+  max-width: 900px;
   margin: 4em;
 
   @include mobile {

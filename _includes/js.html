@@ -1,0 +1,17 @@
+<script>
+  document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+      var togglable = document.getElementById('togglable');
+    },
+    false,
+  );
+
+  function toggleMenu() {
+    if (togglable.classList.contains('closed')) {
+      togglable.classList.remove('closed');
+    } else {
+      togglable.classList.add('closed');
+    }
+  }
+</script>

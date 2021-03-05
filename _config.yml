@@ -6,7 +6,7 @@
 name: Courtney's Blog
 
 # Short bio or description (displayed in the header)
-description: Into the Void!
+# description: Into the Void!
 
 #
 # Flags below are optional
@@ -18,7 +18,7 @@ footer-links:
   email:
   facebook:
   flickr:
-  github:
+  github: cohrose
   instagram:
   linkedin:
   pinterest:

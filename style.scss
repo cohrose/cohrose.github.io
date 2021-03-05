@@ -1,12 +1,9 @@
----
----
-
 //
 // IMPORTS
 //
 
-@import 'reset';
-@import 'variables';
+@import "reset";
+@import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -149,7 +146,7 @@ img {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-  content: ' ';
+  content: " ";
   display: table;
 }
 
@@ -167,7 +164,7 @@ img {
   max-width: 400px;
   width: 33%;
   color: $white;
-  background-color: $blue;
+  background-color: $background;
   font-family: $notoSans;
 
   @include mobile {
@@ -186,7 +183,7 @@ img {
 
   .masthead {
     flex: 0 0;
-    padding: 4em 0 0 4em;
+    padding: 3em 0 0 12%;
 
     @include mobile {
       padding: 20px;
@@ -207,7 +204,7 @@ img {
 
   #togglable {
     & > div {
-      padding: 3em 0 0 4em;
+      padding: 3em 0 0 12%;
 
       @include mobile {
         padding: 20px;
@@ -332,5 +329,5 @@ img {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import 'highlights';
-@import 'svg-icons';
+@import "highlights";
+@import "svg-icons";

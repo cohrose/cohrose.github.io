@@ -207,7 +207,7 @@ img {
 
   #togglable {
     & > div {
-      padding: 3em 0 0 12%;
+      padding: 2em 0 0 12%;
 
       @include mobile {
         padding: 20px;
@@ -247,7 +247,7 @@ img {
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-weight: bold;
-      margin-bottom: 1.5em;
+      margin: 1.5em 0;
       font-size: 0.8em;
     }
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adding Build Versions in Angular
+categories: Recent
 ---
 
 Do you ever find yourself wondering which version of your SPA is running when you pull up your site? This was a problem I wanted to answer in my Angular SPA. Utilizing the `npm version` command in my build pipeline, I was able to include my pipeline build number in my app. This significantly decreased troubleshooting time and version confusion.
@@ -29,16 +30,16 @@ Find your `environment` constant in `src/environments`. You should see two files
 
 ```js
 export const environment = {
-  appVersion: require('../../package.json').version,
+  appVersion: require("../../package.json").version,
   production: true,
-  base: 'area',
+  base: "area"
 };
 ```
 
 In the non-production environment though, I like to add a dev tag.
 
 ```js
-appVersion: require('../../package.json').version + '--dev';
+appVersion: require("../../package.json").version + "--dev";
 ```
 
 This helps me remember if I'm in a non production environment, because there is nothing worse than troubleshooting a problem in the wrong environment.

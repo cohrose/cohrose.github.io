@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello World!
+categories: Recent
 ---
 
 Finally, I have a blog set up.

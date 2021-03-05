@@ -13,14 +13,14 @@ $gray: #666;
 $lightGray: #ccc;
 $lighterGray: #eee;
 $white: #fff;
-$blue: #1e73be;
+$blue: #7f55f8;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
-$notoSerif: 'Noto Serif', serif;
-$notoSans: 'Noto Sans', sans-serif;
+$notoSerif: "Noto Serif", serif;
+$notoSans: "Noto Sans", sans-serif;
 
 // Mobile breakpoints
 @mixin mobile {

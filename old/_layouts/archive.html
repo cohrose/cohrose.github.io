@@ -1,9 +1,0 @@
----
-layout: default
----
-
-{% for post in site.posts %} {% assign currentdate = post.date | date: "%Y" %} {% if currentdate != date %}
-<h2 id="y{{currentdate}}">{{ currentdate }}</h2>
-{% assign date = currentdate %} {% endif %}
-<div class="post-listing"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-{% endfor %}

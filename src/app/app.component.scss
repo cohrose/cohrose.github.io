@@ -22,7 +22,13 @@ header {
   background-color: #862d59;
   color: white;
   font-weight: 600;
+  font-size: 16px;
   padding: 0 40px;
+}
+
+main {
+  position: relative;
+  top: 60px;
 }
 
 @-webkit-keyframes slidein {
@@ -56,5 +62,5 @@ header {
 
 footer {
   min-height: 75px;
-  padding: 0 80px 0 10px;
+  padding: 0 85px 0 10px;
 }

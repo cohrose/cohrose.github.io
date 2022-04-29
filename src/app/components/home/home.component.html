@@ -1,0 +1,13 @@
+<div>
+  <h1>Search for Pokemon</h1>
+  <div>
+    <div class="list" fxFlex fxLayout="row wrap" fxLayoutGap="20px">
+      <app-card
+        *ngFor="let poke of pokemon"
+        [name]="poke.name"
+        [type]="poke.type"
+        [sprite]="poke.sprite"
+      ></app-card>
+    </div>
+  </div>
+</div>

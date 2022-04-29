@@ -14,6 +14,9 @@
         (keyup.enter)="search()"
         type="text"
       />
+      <button matSuffix mat-icon-button class="search" (click)="search()">
+        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+      </button>
     </mat-form-field>
   </div>
   <div
@@ -48,7 +51,13 @@
     </div>
   </div>
   <div>
-    <div class="list" fxFlex fxLayout="row wrap" fxLayoutGap="20px">
+    <div
+      class="list"
+      fxFlex
+      fxLayout="row wrap"
+      fxLayoutGap="20px"
+      fxLayoutGap.lt-sm="8px"
+    >
       <app-card
         [routerLink]="['/view', poke.name]"
         *ngFor="let poke of pokemon"

@@ -4,17 +4,25 @@
     <div *ngIf="getArt()" fxFlex="600px" fxFlex.lt-sm="100%" class="art">
       <img [src]="getArt()" alt="Official ArtWork" />
       <div
-        gdColumns="1fr 1fr 1fr 1fr"
+        [gdColumns]="stats.sprites.back_default ? '1fr 1fr 1fr 1fr' : '1fr 1fr'"
         gdColumns.lt-sm="1fr 1fr"
         gdAlign="center"
         gdGap="35px"
         class="sprites"
       >
         <img [src]="stats.sprites.front_default" alt="Front Default" />
-        <img [src]="stats.sprites.back_default" alt="Back Default" />
+        <img
+          *ngIf="stats.sprites.back_default"
+          [src]="stats.sprites.back_default"
+          alt="Back Default"
+        />
 
         <img [src]="stats.sprites.front_shiny" alt="Shiny Front" />
-        <img [src]="stats.sprites.back_shiny" alt="Shiny Back" />
+        <img
+          *ngIf="stats.sprites.back_shiny"
+          [src]="stats.sprites.back_shiny"
+          alt="Shiny Back"
+        />
       </div>
     </div>
     <div fxFlex>

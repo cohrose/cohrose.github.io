@@ -6,6 +6,10 @@
   }
   .sprites {
     display: inline-grid !important;
+    img {
+      width: 96px;
+      height: 96px;
+    }
   }
 }
 

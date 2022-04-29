@@ -4,7 +4,7 @@
 }
 
 .home-container {
-  padding: 0 20px 20px 20px;
+  padding: 0 10px 20px 10px;
   margin: 0 auto;
 }
 
@@ -39,6 +39,9 @@
 @media screen and (max-width: 600px) {
   .mat-button-toggle-button {
     border-bottom: 1px solid #d3d3d3 !important;
+  }
+  .list {
+    margin-right: -13px;
   }
 }
 

@@ -45,9 +45,7 @@
       </mat-button-toggle-group>
     </div>
     <div fxLayoutAlign.lt-md="center">
-      <mat-slide-toggle [(ngModel)]="shiny"
-        >{{ shiny ? "Hide" : "Show" }} Shiny</mat-slide-toggle
-      >
+      <mat-slide-toggle [(ngModel)]="shiny">Shiny</mat-slide-toggle>
     </div>
   </div>
   <div>
@@ -56,7 +54,7 @@
       fxFlex
       fxLayout="row wrap"
       fxLayoutGap="20px"
-      fxLayoutGap.lt-sm="10px"
+      fxLayoutGap.lt-sm="13px"
     >
       <app-card
         [routerLink]="['/view', poke.name]"

@@ -1,9 +1,40 @@
 <div class="home-container">
-  <h1>Search for Pokemon</h1>
+  <h1>Search Pokemon</h1>
+  <div fxLayoutAlign="center">
+    <mat-form-field fxFlex="50%" fxFlex.lt-md="80%" appearance="outline">
+      <mat-label>Pokemon</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="search()"
+        type="text"
+      />
+    </mat-form-field>
+  </div>
+  <div fxLayoutAlign="center" class="button-toggle">
+    <mat-button-toggle-group
+      name="Generations"
+      aria-label="Pokemon Generations"
+      [(ngModel)]="generation"
+      (ngModelChange)="changeGen($event)"
+    >
+      <mat-button-toggle value="one">Gen 1</mat-button-toggle>
+      <mat-button-toggle value="two">Gen 2</mat-button-toggle>
+      <mat-button-toggle value="three">Gen 3</mat-button-toggle>
+      <mat-button-toggle value="four">Gen 4</mat-button-toggle>
+      <mat-button-toggle value="five">Gen 5</mat-button-toggle>
+      <mat-button-toggle value="six">Gen 6</mat-button-toggle>
+      <mat-button-toggle value="seven">Gen 7</mat-button-toggle>
+      <mat-button-toggle value="eight">Gen 8</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-slide-toggle [(ngModel)]="shiny"
+      >{{ shiny ? "Hide" : "Show" }} Shiny</mat-slide-toggle
+    >
+  </div>
   <div>
     <div class="list" fxFlex fxLayout="row wrap" fxLayoutGap="20px">
       <app-card
-        [routerLink]="['/view', getNumber(poke.url)]"
+        [routerLink]="['/view', poke.name]"
         *ngFor="let poke of pokemon"
         [name]="poke.name"
         [sprite]="createUrl(poke.url)"

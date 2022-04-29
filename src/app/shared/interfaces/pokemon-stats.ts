@@ -1,4 +1,5 @@
 export interface Stats {
+  id: number;
   abilities: Ability[];
   location_area_encounters: string;
   moves: Move[];
@@ -18,7 +19,7 @@ interface Move {
   url: string;
 }
 
-interface Species {
+export interface Species {
   name: string;
   url: string;
 }

@@ -19,7 +19,7 @@ header {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #862d59;
+  background-color: #5f8575;
   color: white;
   font-weight: 600;
   font-size: 16px;
@@ -34,38 +34,4 @@ header {
 main {
   position: relative;
   top: 60px;
-}
-
-@-webkit-keyframes slidein {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes slidein {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-#pikachu {
-  position: relative;
-  bottom: 3%;
-  left: 1%;
-  max-width: 90px;
-  // -webkit-animation: slidein 5s linear 1s infinite running;
-  // animation: slidein 5s linear 1s infinite running;
-}
-
-footer {
-  min-height: 75px;
-  padding: 0 85px 0 10px;
 }

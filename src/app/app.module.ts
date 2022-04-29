@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormatPipe } from './shared/format.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
-import { RouterModule } from '@angular/router';
-import { FormatPipe } from './shared/format.pipe';
+import { ErrorComponent } from './components/error/error.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
+const MatModules = [
+  FlexLayoutModule,
+  MatIconModule,
+  MatInputModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatSlideToggleModule,
+  MatButtonToggleModule
+];
 
 @NgModule({
   declarations: [
@@ -18,15 +38,18 @@ import { FormatPipe } from './shared/format.pipe';
     HomeComponent,
     CardComponent,
     ViewPokemonComponent,
-    FormatPipe
+    FormatPipe,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ...MatModules
   ],
   providers: [],
   bootstrap: [AppComponent]

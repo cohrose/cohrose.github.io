@@ -48,4 +48,20 @@
       </div>
     </div>
   </div>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" class="bottom">
+    <div class="card" [routerLink]="['/view', stats.id - 1]">
+      <h3>Previous</h3>
+      <img [src]="getSprite(stats.id - 1)" alt="Front Default" />
+    </div>
+    <i fxFlexAlign="center" class="fa-solid fa-arrow-left-long fa-2x"></i>
+    <div class="card current">
+      <h3>Current</h3>
+      <img [src]="getSprite(stats.id)" alt="Front Default" />
+    </div>
+    <i fxFlexAlign="center" class="fa-solid fa-arrow-right-long fa-2x"></i>
+    <div class="card" [routerLink]="['/view', stats.id + 1]">
+      <h3>Next</h3>
+      <img [src]="getSprite(stats.id + 1)" alt="Front Default" />
+    </div>
+  </div>
 </div>

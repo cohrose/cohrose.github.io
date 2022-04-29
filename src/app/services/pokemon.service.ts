@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AllPokemon } from '../shared/interfaces/all-pokemon';
 import { Stats } from '../shared/interfaces/pokemon-stats';
 
-/** Base header */
-const baseHeaders = { 'content-type': 'application/json' };
+const generations = {
+  one: { limit: '151', offset: '0' },
+  two: { limit: '100', offset: '151' },
+  three: { limit: '135', offset: '251' },
+  four: { limit: '107', offset: '386' },
+  five: { limit: '156', offset: '493' },
+  six: { limit: '72', offset: '649' },
+  seven: { limit: '88', offset: '721' },
+  eight: { limit: '96', offset: '809' }
+};
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +21,9 @@ const baseHeaders = { 'content-type': 'application/json' };
 export class PokemonService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<AllPokemon> {
+  getAll(generation: string): Observable<AllPokemon> {
     return this.http.get<AllPokemon>(
-      'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
+      `https://pokeapi.co/api/v2/pokemon?limit=${generations[generation].limit}&offset=${generations[generation].offset}`
     );
   }
 

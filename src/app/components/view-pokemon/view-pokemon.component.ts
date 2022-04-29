@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, tap, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { map, tap, switchMap, catchError } from 'rxjs/operators';
 import { Stats } from 'src/app/shared/interfaces/pokemon-stats';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-view-pokemon',
@@ -12,9 +13,11 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class ViewPokemonComponent implements OnInit {
   pokemon: string;
   stats: Stats;
+
   constructor(
     private route: ActivatedRoute,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -23,7 +26,10 @@ export class ViewPokemonComponent implements OnInit {
         map((params: ParamMap) => (this.pokemon = params.get('name'))),
         switchMap((x: string) => this.pokemonService.getOne(x)),
         tap((x: Stats) => (this.stats = x)),
-        tap(() => console.log(this.stats))
+        catchError(err => {
+          this.router.navigateByUrl('/not-found');
+          return throwError(err);
+        })
       )
       .subscribe();
   }
@@ -32,7 +38,7 @@ export class ViewPokemonComponent implements OnInit {
     return this.stats.sprites.other['official-artwork'].front_default;
   }
 
-  getType(type) {
-    console.log(type);
+  getSprite(id: number) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   }
 }

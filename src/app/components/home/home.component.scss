@@ -4,6 +4,28 @@
 }
 
 .home-container {
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   margin: 0 auto;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #5f8575;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #5f8575;
+}
+
+.mat-slide-toggle {
+  position: relative;
+  top: 13px;
+  margin-left: 25px;
+}
+
+.button-toggle {
+  margin-bottom: 20px;
+}
+
+.mat-button-toggle-checked {
+  background-color: rgba(95, 133, 117, 0.3) !important;
 }

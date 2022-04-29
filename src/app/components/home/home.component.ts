@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { tap } from 'rxjs/operators';
 import { AllPokemon, Pokemon } from 'src/app/shared/interfaces/all-pokemon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   pokemon: Pokemon[];
+  searchTerm: string;
+  shiny: boolean;
+  generation: string = 'one';
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getAll();
+    this.getAll('one');
   }
 
-  getAll() {
+  getAll(gen: string) {
     this.pokemonService
-      .getAll()
+      .getAll(gen)
       .pipe(tap((x: AllPokemon) => (this.pokemon = x.results)))
       .subscribe();
   }
@@ -31,22 +36,22 @@ export class HomeComponent implements OnInit {
   }
 
   createUrl(url: string) {
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.getNumber(
-      url
-    )}.png`;
+    if (this.shiny) {
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${this.getNumber(
+        url
+      )}.png`;
+    } else {
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.getNumber(
+        url
+      )}.png`;
+    }
   }
 
-  curateName(name: string): string {
-    let newName;
-    if (name.includes('-f')) {
-      newName = name.replace('-f', ' (F)');
-    } else if (name == 'mr-mime') {
-      newName = 'Mr-Mime';
-    } else if (name.includes('-m')) {
-      newName = name.replace('-m', ' (M)');
-    } else {
-      newName = name;
-    }
-    return newName;
+  search() {
+    this.router.navigateByUrl(`/view/${this.searchTerm}`);
+  }
+
+  changeGen(gen: string) {
+    this.getAll(gen);
   }
 }

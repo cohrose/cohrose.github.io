@@ -1,11 +1,11 @@
 <div *ngIf="stats" class="container">
   <h1>{{ stats.name | format }}</h1>
-  <div fxLayout="row" fxLayoutGap="20px">
-    <div *ngIf="getArt()" fxFlex="600px" class="art">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div *ngIf="getArt()" fxFlex="600px" fxFlex.lt-sm="100%" class="art">
       <img [src]="getArt()" alt="Official ArtWork" />
       <div
         gdColumns="1fr 1fr 1fr 1fr"
-        gdColumns.lt-md="1fr 1fr"
+        gdColumns.lt-sm="1fr 1fr"
         gdAlign="center"
         gdGap="35px"
         class="sprites"
@@ -29,7 +29,7 @@
         </div>
         <div fxFlex>
           <h2>Base Stats</h2>
-          <div gdColumns="1fr 1fr 1fr" gdGap="10px">
+          <div gdColumns="1fr 1fr 1fr" gdColumns.lt-sm="1fr 1fr" gdGap="10px">
             <div *ngFor="let stat of stats.stats">
               {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
             </div>
@@ -40,6 +40,7 @@
       <div
         gdColumns="1fr 1fr 1fr 1fr"
         gdColumns.lt-md="1fr 1fr 1fr"
+        gdColumns.lt-sm="1fr 1fr"
         gdGap="10px"
       >
         <div *ngFor="let move of stats.moves">
@@ -48,7 +49,13 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" class="bottom">
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center"
+    fxLayoutGap="20px"
+    fxLayoutGap.lt-sm="5px"
+    class="bottom"
+  >
     <div class="card" [routerLink]="['/view', stats.id - 1]">
       <h3>Previous</h3>
       <img [src]="getSprite(stats.id - 1)" alt="Front Default" />

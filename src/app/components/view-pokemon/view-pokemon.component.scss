@@ -1,5 +1,9 @@
 .art {
   text-align: center;
+  img {
+    width: 100%;
+    max-width: 475px;
+  }
   .sprites {
     display: inline-grid !important;
   }
@@ -11,6 +15,9 @@
     padding: 12px 15px 5px 15px;
     border-radius: 8px;
     cursor: pointer;
+    &.current {
+      cursor: default;
+    }
   }
   h3 {
     margin-top: 0;
@@ -25,4 +32,12 @@
 
 .card.current:hover {
   box-shadow: none;
+}
+
+@media screen and (max-width: 600px) {
+  .bottom {
+    .card {
+      padding: 3px 5px 0 5px;
+    }
+  }
 }

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   }
 
   search() {
-    this.router.navigateByUrl(`/view/${this.searchTerm}`);
+    this.router.navigateByUrl(`/view/${this.searchTerm.toLocaleLowerCase()}`);
   }
 
   changeGen(gen: string) {

@@ -7,14 +7,26 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
+import { RouterModule } from '@angular/router';
+import { FormatPipe } from './shared/format.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CardComponent,
+    ViewPokemonComponent,
+    FormatPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

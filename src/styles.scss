@@ -18,3 +18,25 @@
 body {
   background: #ebebeb;
 }
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  padding: 0 100px;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding: 30px 50px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .container {
+    padding: 30px 15px;
+  }
+}

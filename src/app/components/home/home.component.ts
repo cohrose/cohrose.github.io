@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { tap } from 'rxjs/operators';
+import { AllPokemon, Pokemon } from 'src/app/shared/interfaces/all-pokemon';
 
 @Component({
   selector: 'app-home',
@@ -6,59 +9,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  pokemon;
-  constructor() {}
+  pokemon: Pokemon[];
+
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
-    this.pokemon = [
-      {
-        name: 'Pikachu',
-        type: 'Electric',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
-      },
-      {
-        name: 'Squirtle',
-        type: 'Water',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png'
-      },
-      {
-        name: 'Charmander',
-        type: 'Fire',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png'
-      },
-      {
-        name: 'Togepi',
-        type: 'Fairy',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png'
-      },
-      {
-        name: 'Ponyta',
-        type: 'Fire',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png'
-      },
-      {
-        name: 'Abra',
-        type: 'Psychic',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png'
-      },
-      {
-        name: 'Poliwag',
-        type: 'Water',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png'
-      },
-      {
-        name: 'Eevee',
-        type: 'Normal',
-        sprite:
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png'
-      }
-    ];
+    this.getAll();
+  }
+
+  getAll() {
+    this.pokemonService
+      .getAll()
+      .pipe(tap((x: AllPokemon) => (this.pokemon = x.results)))
+      .subscribe();
+  }
+
+  getNumber(url: string) {
+    let split = url.split('/');
+    split = split.filter(x => x != '');
+    return split[split.length - 1];
+  }
+
+  createUrl(url: string) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.getNumber(
+      url
+    )}.png`;
+  }
+
+  curateName(name: string): string {
+    let newName;
+    if (name.includes('-f')) {
+      newName = name.replace('-f', ' (F)');
+    } else if (name == 'mr-mime') {
+      newName = 'Mr-Mime';
+    } else if (name.includes('-m')) {
+      newName = name.replace('-m', ' (M)');
+    } else {
+      newName = name;
+    }
+    return newName;
   }
 }

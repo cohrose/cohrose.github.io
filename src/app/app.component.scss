@@ -24,6 +24,11 @@ header {
   font-weight: 600;
   font-size: 16px;
   padding: 0 40px;
+  img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
 }
 
 main {
@@ -56,8 +61,8 @@ main {
   bottom: 3%;
   left: 1%;
   max-width: 90px;
-  -webkit-animation: slidein 5s linear 1s infinite running;
-  animation: slidein 5s linear 1s infinite running;
+  // -webkit-animation: slidein 5s linear 1s infinite running;
+  // animation: slidein 5s linear 1s infinite running;
 }
 
 footer {

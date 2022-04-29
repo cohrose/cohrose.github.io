@@ -1,0 +1,51 @@
+<div *ngIf="stats" class="container">
+  <h1>{{ stats.name | format }}</h1>
+  <div fxLayout="row" fxLayoutGap="20px">
+    <div *ngIf="getArt()" fxFlex="600px" class="art">
+      <img [src]="getArt()" alt="Official ArtWork" />
+      <div
+        gdColumns="1fr 1fr 1fr 1fr"
+        gdColumns.lt-md="1fr 1fr"
+        gdAlign="center"
+        gdGap="35px"
+        class="sprites"
+      >
+        <img [src]="stats.sprites.front_default" alt="Front Default" />
+        <img [src]="stats.sprites.back_default" alt="Back Default" />
+
+        <img [src]="stats.sprites.front_shiny" alt="Shiny Front" />
+        <img [src]="stats.sprites.back_shiny" alt="Shiny Back" />
+      </div>
+    </div>
+    <div fxFlex>
+      <div>
+        <div fxFlex="25%">
+          <h2>Type</h2>
+          <div gdGap="10px">
+            <div *ngFor="let type of stats.types">
+              {{ type.type.name | titlecase }}
+            </div>
+          </div>
+        </div>
+        <div fxFlex>
+          <h2>Base Stats</h2>
+          <div gdColumns="1fr 1fr 1fr" gdGap="10px">
+            <div *ngFor="let stat of stats.stats">
+              {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Moves</h2>
+      <div
+        gdColumns="1fr 1fr 1fr 1fr"
+        gdColumns.lt-md="1fr 1fr 1fr"
+        gdGap="10px"
+      >
+        <div *ngFor="let move of stats.moves">
+          {{ move.move.name | titlecase }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

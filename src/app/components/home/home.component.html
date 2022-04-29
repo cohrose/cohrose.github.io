@@ -1,12 +1,12 @@
-<div>
+<div class="home-container">
   <h1>Search for Pokemon</h1>
   <div>
     <div class="list" fxFlex fxLayout="row wrap" fxLayoutGap="20px">
       <app-card
+        [routerLink]="['/view', getNumber(poke.url)]"
         *ngFor="let poke of pokemon"
         [name]="poke.name"
-        [type]="poke.type"
-        [sprite]="poke.sprite"
+        [sprite]="createUrl(poke.url)"
       ></app-card>
     </div>
   </div>

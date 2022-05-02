@@ -1,5 +1,5 @@
 <div *ngIf="stats" class="container">
-  <h1>{{ stats.name | format }}</h1>
+  <h1>{{ stats.name | format }} #{{ stats.id }}</h1>
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
     <div *ngIf="getArt()" fxFlex="600px" fxFlex.lt-sm="100%" class="art">
       <img [src]="getArt()" alt="Official ArtWork" />
@@ -26,12 +26,14 @@
       </div>
     </div>
     <div fxFlex>
-      <div fxLayout.lt-sm="column">
+      <div fxLayout="row" fxLayout.lt-sm="column">
         <div fxFlex="25%">
           <h2>Type</h2>
-          <div gdGap="10px">
+          <div fxLayoutGap="12px" fxLayout="column" fxLayout.lt-sm="row">
             <div *ngFor="let type of stats.types">
-              {{ type.type.name | titlecase }}
+              <span class="type" [class]="type.type.name">{{
+                type.type.name | uppercase
+              }}</span>
             </div>
           </div>
         </div>
@@ -39,7 +41,7 @@
           <h2>Base Stats</h2>
           <div gdColumns="1fr 1fr 1fr" gdColumns.lt-sm="1fr 1fr" gdGap="10px">
             <div *ngFor="let stat of stats.stats">
-              {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
+              {{ stat.stat.name | formatdash }}: {{ stat.base_stat }}
             </div>
           </div>
         </div>
@@ -51,9 +53,18 @@
         gdColumns.lt-sm="1fr 1fr"
         gdGap="10px"
       >
-        <div *ngFor="let move of stats.moves">
-          {{ move.move.name | titlecase }}
+        <div *ngFor="let move of getMoves()">
+          {{ move.move.name | formatdash }}
         </div>
+      </div>
+      <div fxLayoutAlign="center" class="more" *ngIf="stats.moves.length > 48">
+        <button mat-stroked-button (click)="hide = !hide">
+          Show {{ hide ? "More" : "Less" }}
+          <i
+            class="fa-solid chevron"
+            [ngClass]="hide ? 'fa-chevron-down' : 'fa-chevron-up'"
+          ></i>
+        </button>
       </div>
     </div>
   </div>

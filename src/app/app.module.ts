@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormatPipe } from './shared/format.pipe';
+import { FormatDashPipe } from './shared/format.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
@@ -39,6 +40,7 @@ const MatModules = [
     CardComponent,
     ViewPokemonComponent,
     FormatPipe,
+    FormatDashPipe,
     ErrorComponent
   ],
   imports: [

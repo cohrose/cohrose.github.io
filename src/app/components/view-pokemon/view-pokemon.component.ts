@@ -13,6 +13,7 @@ import { throwError } from 'rxjs';
 export class ViewPokemonComponent implements OnInit {
   pokemon: string;
   stats: Stats;
+  hide: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,5 +41,13 @@ export class ViewPokemonComponent implements OnInit {
 
   getSprite(id: number) {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+  }
+
+  getMoves() {
+    if (this.hide && this.stats.moves.length > 48) {
+      return this.stats.moves.slice(0, 48);
+    } else {
+      return this.stats.moves;
+    }
   }
 }

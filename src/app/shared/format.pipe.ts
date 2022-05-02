@@ -18,3 +18,12 @@ export class FormatPipe implements PipeTransform {
     });
   }
 }
+
+@Pipe({ name: 'formatdash' })
+export class FormatDashPipe implements PipeTransform {
+  transform(text: string): string {
+    let ending = text.substr(1);
+    ending = ending.replace(/\-[a-z]/g, match => match.toUpperCase());
+    return text.charAt(0).toUpperCase() + ending;
+  }
+}

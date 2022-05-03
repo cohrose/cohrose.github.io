@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
   pokemon: Pokemon[];
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.getAll('one');
   }
 
-  getAll(gen: string) {
+  getAll(gen: string): void {
     this.pokemonService
       .getAll(gen)
       .pipe(tap((x: AllPokemon) => (this.pokemon = x.results)))
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   getNumber(url: string) {
     let split = url.split('/');
-    split = split.filter(x => x != '');
+    split = split.filter((x) => x != '');
     return split[split.length - 1];
   }
 

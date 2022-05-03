@@ -14,7 +14,7 @@ interface Ability {
   url: string;
 }
 
-interface Move {
+export interface Move {
   name: string;
   url: string;
 }

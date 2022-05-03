@@ -31,9 +31,12 @@
           <h2>Type</h2>
           <div fxLayoutGap="12px" fxLayout="column" fxLayout.lt-sm="row">
             <div *ngFor="let type of stats.types">
-              <span class="type" [class]="type.type.name">{{
-                type.type.name | uppercase
-              }}</span>
+              <a
+                class="type"
+                [class]="type.type.name"
+                [routerLink]="['/type', type.type.name]"
+                >{{ type.type.name | uppercase }}</a
+              >
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AllPokemon } from '../shared/interfaces/all-pokemon';
 import { Stats } from '../shared/interfaces/pokemon-stats';
+import { Type } from '../shared/interfaces/type';
 
 const generations = {
   one: { limit: '151', offset: '0' },
@@ -12,11 +13,11 @@ const generations = {
   five: { limit: '156', offset: '493' },
   six: { limit: '72', offset: '649' },
   seven: { limit: '88', offset: '721' },
-  eight: { limit: '96', offset: '809' }
+  eight: { limit: '96', offset: '809' },
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonService {
   constructor(private http: HttpClient) {}
@@ -29,5 +30,9 @@ export class PokemonService {
 
   getOne(name: string): Observable<Stats> {
     return this.http.get<Stats>(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
+
+  getType(type: string): Observable<Type> {
+    return this.http.get<Type>(`https://pokeapi.co/api/v2/type/${type}`);
   }
 }

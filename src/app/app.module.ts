@@ -10,10 +10,12 @@ import { AppComponent } from './app.component';
 
 import { FormatPipe } from './shared/format.pipe';
 import { FormatDashPipe } from './shared/format.pipe';
+import { ReplaceDashPipe } from './shared/format.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
 import { ErrorComponent } from './components/error/error.component';
+import { TypesComponent } from './components/types/types.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,7 +32,7 @@ const MatModules = [
   MatButtonModule,
   MatFormFieldModule,
   MatSlideToggleModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
 ];
 
 @NgModule({
@@ -41,7 +43,9 @@ const MatModules = [
     ViewPokemonComponent,
     FormatPipe,
     FormatDashPipe,
-    ErrorComponent
+    ReplaceDashPipe,
+    ErrorComponent,
+    TypesComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +55,9 @@ const MatModules = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ...MatModules
+    ...MatModules,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

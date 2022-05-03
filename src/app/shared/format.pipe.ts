@@ -13,7 +13,7 @@ export class FormatPipe implements PipeTransform {
     } else {
       newName = name;
     }
-    return newName.replace(/\w\S*/g, function(txt) {
+    return newName.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1);
     });
   }
@@ -23,7 +23,17 @@ export class FormatPipe implements PipeTransform {
 export class FormatDashPipe implements PipeTransform {
   transform(text: string): string {
     let ending = text.substr(1);
-    ending = ending.replace(/\-[a-z]/g, match => match.toUpperCase());
+    ending = ending.replace(/\-[a-z]/g, (match) => match.toUpperCase());
+    return text.charAt(0).toUpperCase() + ending;
+  }
+}
+
+@Pipe({ name: 'replacedash' })
+export class ReplaceDashPipe implements PipeTransform {
+  transform(text: string): string {
+    let ending = text.substr(1);
+    ending = ending.replace(/\-[a-z]/g, (match) => match.toUpperCase());
+    ending = ending.replace(/\-/g, ' ');
     return text.charAt(0).toUpperCase() + ending;
   }
 }

@@ -6,11 +6,11 @@ import { ErrorComponent } from './components/error/error.component';
 import { TypesComponent } from './components/types/types.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'view/:name', component: ViewPokemonComponent },
   { path: 'type/:type', component: TypesComponent },
   { path: 'not-found', component: ErrorComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -19,4 +19,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

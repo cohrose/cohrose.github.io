@@ -14,13 +14,14 @@ const generations = {
   six: { limit: '72', offset: '649' },
   seven: { limit: '88', offset: '721' },
   eight: { limit: '96', offset: '809' },
+  nine: { limit: '103', offset: '905' },
 };
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAll(generation: string): Observable<AllPokemon> {
     return this.http.get<AllPokemon>(

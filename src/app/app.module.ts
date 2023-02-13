@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MatModules = [
   FlexLayoutModule,
@@ -33,6 +34,7 @@ const MatModules = [
   MatFormFieldModule,
   MatSlideToggleModule,
   MatButtonToggleModule,
+  MatTooltipModule
 ];
 
 @NgModule({
@@ -60,4 +62,4 @@ const MatModules = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

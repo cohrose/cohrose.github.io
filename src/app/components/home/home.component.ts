@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   shiny: boolean;
   generation: string = 'one';
 
-  constructor(private pokemonService: PokemonService, private router: Router) {}
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAll('one');
@@ -52,6 +52,9 @@ export class HomeComponent implements OnInit {
   }
 
   changeGen(gen: string) {
+    if (gen == "nine") {
+      this.shiny = false
+    }
     this.getAll(gen);
   }
 }

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-App';
+
+  scroll(id: string) {
+    let el = document.getElementById(id);
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
 }

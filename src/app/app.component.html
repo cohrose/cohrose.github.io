@@ -1,6 +1,44 @@
-<header>
-  <img src="assets/pokeball-black.png" alt="Home" routerLink="" />
+<header id="top">
+  <div fxFlex fxLayout fxFlexAlign="center">
+    <div fxFlex>
+      <i
+        class="fa-solid fa-code fa-lg"
+        routerLink="/"
+        (click)="scroll('top')"
+        matTooltip="Back to Top"
+        matTooltipPosition="after"
+      ></i>
+    </div>
+    <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px">
+      <button mat-button (click)="scroll('about')">About</button>
+      <button mat-button (click)="scroll('skills')">Skills</button>
+      <button mat-button (click)="scroll('work')">Projects</button>
+      <button mat-button (click)="scroll('contact')">Contact</button>
+    </div>
+  </div>
 </header>
+
+<div class="social">
+  <button mat-icon-button matTooltip="LinkedIn" matTooltipPosition="after">
+    <i class="fa-brands fa-linkedin"></i>
+  </button>
+  <button mat-icon-button matTooltip="Email" matTooltipPosition="after">
+    <i class="fa-regular fa-envelope"></i>
+  </button>
+  <button mat-icon-button matTooltip="Resume" matTooltipPosition="after">
+    <i class="fa-regular fa-file"></i>
+  </button>
+</div>
+
+<!-- <div class="side-line">
+  <div class="line"></div>
+  <i class="fa-solid fa-circle"></i>
+  <div class="line"></div>
+  <i class="fa-solid fa-circle"></i>
+  <div class="line"></div>
+  <i class="fa-solid fa-circle"></i>
+  <div class="line half"></div>
+</div> -->
 
 <main fxFlex>
   <router-outlet></router-outlet>

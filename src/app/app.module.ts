@@ -11,11 +11,6 @@ import { AppComponent } from './app.component';
 import { FormatPipe } from './shared/format.pipe';
 import { FormatDashPipe } from './shared/format.pipe';
 import { ReplaceDashPipe } from './shared/format.pipe';
-import { HomeComponent } from './components/home/home.component';
-import { CardComponent } from './components/card/card.component';
-import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
-import { ErrorComponent } from './components/error/error.component';
-import { TypesComponent } from './components/types/types.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { PortfolioHomeComponent } from './components/home/home.component';
 
 const MatModules = [
   FlexLayoutModule,
@@ -40,14 +36,10 @@ const MatModules = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CardComponent,
-    ViewPokemonComponent,
+    PortfolioHomeComponent,
     FormatPipe,
     FormatDashPipe,
-    ReplaceDashPipe,
-    ErrorComponent,
-    TypesComponent,
+    ReplaceDashPipe
   ],
   imports: [
     BrowserModule,
@@ -57,9 +49,9 @@ const MatModules = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ...MatModules,
+    ...MatModules
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

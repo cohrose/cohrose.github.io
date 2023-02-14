@@ -21,6 +21,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PortfolioHomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 const MatModules = [
   FlexLayoutModule,
@@ -39,7 +43,11 @@ const MatModules = [
     PortfolioHomeComponent,
     FormatPipe,
     FormatDashPipe,
-    ReplaceDashPipe
+    ReplaceDashPipe,
+    AboutComponent,
+    SkillsComponent,
+    ContactComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

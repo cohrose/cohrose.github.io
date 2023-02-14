@@ -6,9 +6,9 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
+  // display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -30,6 +30,9 @@ header {
   button {
     color: var(--light-purple);
     font-weight: 600;
+    &:hover {
+      color: var(--pink);
+    }
   }
   i {
     font-size: 35px;
@@ -78,4 +81,30 @@ header {
 main {
   position: relative;
   top: 60px;
+}
+
+@media screen and (max-width: 1279px) {
+  .social {
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .social {
+    position: relative;
+    display: flex;
+    margin: 25px auto 0;
+    left: 0;
+    button {
+      margin: 0 10px;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+  height: 45px;
+  position: relative;
+  top: 15px;
 }

@@ -1,0 +1,29 @@
+.grid {
+  font-size: 35px;
+  width: 615px;
+  margin: 0 auto;
+  i {
+    margin-right: 10px;
+    width: 45px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .grid {
+    width: 515px;
+    font-size: 28px;
+    i {
+      width: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .grid {
+    width: 365px;
+    font-size: 20px;
+    i {
+      width: 25px;
+    }
+  }
+}

@@ -4,7 +4,6 @@ import { PortfolioHomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: PortfolioHomeComponent },
-  { path: 'pokemon' },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

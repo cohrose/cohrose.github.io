@@ -5,6 +5,7 @@
   --pink: #ffd6ba;
   // --green: #b2ecd4;
   --light-purple: #a5abbe;
+  --medium-purple: #252b3e;
 }
 
 .mat-elevation-z2 {
@@ -57,13 +58,16 @@ h1 {
 
 .container {
   padding: 0 100px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   max-width: 1000px;
 }
 
 .section {
-  min-height: 95vh;
-  height: 95vh;
+  &.one {
+    min-height: 85vh;
+    height: 85vh;
+  }
+  min-height: 60vh;
   padding-top: 100px;
   a {
     color: var(--light-purple);
@@ -77,15 +81,38 @@ h1 {
   }
 }
 
-@media screen and (max-width: 1280px) {
+h3 {
+  color: var(--pink);
+  font-size: 35px;
+}
+
+.text {
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1279px) {
   .container {
     padding: 30px 50px;
   }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 959px) {
   .container {
     padding: 30px 15px;
+  }
+
+  .section {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .section {
+    min-height: 100%;
+    height: 100%;
   }
 }
 

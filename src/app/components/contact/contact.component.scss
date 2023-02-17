@@ -1,0 +1,18 @@
+.text.italic {
+  text-align: center;
+  font-style: italic;
+}
+
+.email-me {
+  margin-top: 55px;
+  text-align: center;
+  a {
+    background: var(--pink);
+    color: var(--purple);
+    padding: 10px 15px;
+    border-radius: 5px;
+    &:hover {
+      box-shadow: 1px 1px 5px var(--light-purple);
+    }
+  }
+}

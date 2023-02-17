@@ -7,20 +7,20 @@
     gdGap="20px"
     class="project-grid"
   >
-    <a class="card" href="https://cohrose.github.io/pokemon/">
+    <a class="card" href="https://cohrose.github.io/pokemon/" target="_blank">
       <div>
         <div class="title" fxFlex>Pokemon</div>
         <img src="assets/pokeball.png" alt="Pokeball" width="27px" />
       </div>
 
       <div class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna
+        Collection of all Pokemon organized by generation, along with shiny
+        variations, and stats for each Pokemon.
       </div>
       <div class="typewriter">Angular</div>
     </a>
 
-    <a class="card" href="https://cohrose.github.io/pokemon/">
+    <a class="card" href="https://cohrose.github.io/pokemon/" target="_blank">
       <div>
         <div class="title" fxFlex>Berries</div>
         <img src="assets/razz-berry.png" alt="Razz Berry" width="27px" />
@@ -33,7 +33,7 @@
       <div class="typewriter">React</div>
     </a>
 
-    <a class="card" href="https://cohrose.github.io/pokemon/">
+    <a class="card" href="https://cohrose.github.io/pokemon/" target="_blank">
       <div>
         <div class="title" fxFlex>Incubator</div>
         <img src="assets/egg.png" alt="Pokeball" width="27px" />
@@ -48,19 +48,148 @@
   </div>
 
   <div class="text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Above are some of my personal projects I've made for fun. I apologize if
+    you're unfamiliar with the Pokemon franchise, I just really have fun with
+    subjects I'm passionate about.
   </div>
   <div class="text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    While working at UNF, I've worked on many web-apps for the University; for
+    both students, and faculty and staff. Some of the most memorable projects
+    are as follows:
+  </div>
+
+  <div fxLayout fxLayout.lt-md="column" fxLayoutGap="35px" class="project-card">
+    <img
+      fxHide.lt-md
+      src="assets/mserf-cropped.jpg"
+      alt="UNF MSERF Project Image"
+      width="500px"
+    />
+    <div fxFlex>
+      <div class="title">
+        UNF MSERF WebApp
+      </div>
+      <img
+        fxShow
+        fxHide.gt-sm
+        src="assets/mserf-cropped.jpg"
+        alt="UNF MSERF Project Image"
+        width="500px"
+        class="mobile"
+      />
+      <div class="description">
+        My favorite feature I implemented in this webapp was the calendar. I
+        used a package called
+        <a href="https://www.npmjs.com/package/angular-calendar" target="_blank"
+          >Angular Calendar</a
+        >, which was really fun to use since it was so customizable.
+        <div class="padding">
+          The purpose of this app is to book reservations for lab equipment.
+          Along with reserving a time and device, they also had to specify any
+          materials they may need, such as gold foil.
+        </div>
+        <div class="padding typewriter" fxLayout fxLayoutGap="20px">
+          <div>Angular</div>
+          <div>C#</div>
+          <div>.Net</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    fxLayout
+    fxLayout.lt-md="column"
+    fxLayoutGap="35px"
+    class="project-card margin"
+  >
+    <div fxFlex>
+      <div class="title">
+        UNF Student Trends WebApp
+      </div>
+      <img
+        fxShow
+        fxHide.gt-sm
+        src="assets/trends.jpg"
+        alt="UNF Student Trends Project Image"
+        width="500px"
+        class="mobile"
+      />
+      <div class="description">
+        The most challenging aspect of this webapp were the dynamic charts we
+        created with
+        <a href="https://d3js.org/" target="_blank">D3</a>, I was responsible
+        for the scatterplot, while others worked on different features.
+        <div class="padding">
+          The purpose of this app is to display different aspects of a student
+          engagement in their college experience. You could view how often you
+          visited the library, how your GPA changed over time, or see how many
+          credit hours you earned per semester.
+        </div>
+        <div class="padding typewriter" fxLayout fxLayoutGap="20px">
+          <div>Angular</div>
+          <div>D3</div>
+          <div>C#</div>
+          <div>.Net</div>
+        </div>
+      </div>
+    </div>
+    <img
+      fxHide.lt-md
+      src="assets/trends.jpg"
+      alt="UNF Student Trends Project Image"
+      width="500px"
+    />
+  </div>
+
+  <div
+    fxLayout
+    fxLayout.lt-md="column"
+    fxLayoutGap="35px"
+    class="project-card margin-small"
+  >
+    <img
+      fxHide.lt-md
+      src="assets/mywings.jpg"
+      alt="UNF MyWings Portal"
+      width="500px"
+    />
+    <div fxFlex>
+      <div class="title">
+        UNF MyWings Portal
+      </div>
+      <img
+        fxShow
+        fxHide.gt-sm
+        src="assets/mywings.jpg"
+        alt="UNF MyWings Portal"
+        width="500px"
+        class="mobile"
+      />
+
+      <div class="description">
+        Our
+        <a href="https://campusm.exlibrisgroup.com/" target="_blank">vendor</a>
+        for our student portal updated their custom developemnt process, so we
+        decided to take this opportunity to do a re-design, which meant we had
+        to remake all our custom pages in React.
+        <div class="padding">
+          I was responsible for all of the React pages, since I was the only
+          Developer at the time. Since this is a vendor project, we had to
+          adhere to their
+          <a
+            href="https://developers.exlibrisgroup.com/campusm/npm/"
+            target="_blank"
+            >Application Extension Kit (AEK)</a
+          >
+          to create most features. It was really fun switching it up to React
+          since I was used to Angular.
+        </div>
+        <div class="padding typewriter" fxLayout fxLayoutGap="20px">
+          <div>React</div>
+          <div>AEK</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

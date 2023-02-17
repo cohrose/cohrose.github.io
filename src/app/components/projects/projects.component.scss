@@ -10,10 +10,66 @@
     }
     .card-text {
       padding: 15px 0;
+      font-size: 15px;
     }
     .typewriter {
       font-family: "Courier New", monospace;
       font-size: 15px;
     }
+  }
+}
+
+.project-card {
+  &.margin {
+    margin-top: 70px;
+  }
+  &.margin-small {
+    margin-top: 50px;
+  }
+  .mobile {
+    margin-bottom: 30px;
+  }
+  img {
+    box-shadow: 13px 13px var(--light-purple);
+    border-radius: 5px;
+    height: fit-content;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 0 20px;
+  }
+
+  .description {
+    font-size: 17px;
+    line-height: 1.5;
+    .padding {
+      padding-top: 15px;
+      &.typewriter {
+        font-family: "Courier New", monospace;
+        font-size: 15px;
+        padding-top: 20px;
+      }
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .project-card {
+    &.margin {
+      margin-top: 30px;
+    }
+    &.margin-small {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .project-card img {
+    width: -webkit-fill-available;
   }
 }

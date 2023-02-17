@@ -1,0 +1,15 @@
+.headshot {
+  box-shadow: 13px 13px var(--pink);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 959px) {
+  .headshot {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .headshot {
+    width: 200px;
+  }
+}

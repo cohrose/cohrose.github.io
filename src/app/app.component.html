@@ -19,7 +19,12 @@
       <button mat-icon-button (click)="showMenu()">
         <i class="fa-solid fa-bars"></i>
       </button>
-      <div fxLayout="column" *ngIf="menu" class="menu-buttons">
+      <div
+        fxLayout="column"
+        fxLayoutGap="7px"
+        *ngIf="menu"
+        class="menu-buttons"
+      >
         <ng-container [ngTemplateOutlet]="menuItems"></ng-container>
       </div>
     </div>

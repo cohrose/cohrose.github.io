@@ -32,7 +32,7 @@
   img {
     box-shadow: 13px 13px var(--light-purple);
     border-radius: 5px;
-    height: fit-content;
+    height: -webkit-fill-available;
   }
   .title {
     font-size: 25px;

@@ -7,9 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-App';
+  menu = false;
 
   scroll(id: string) {
+    this.menu = false;
     let el = document.getElementById(id);
     el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  showMenu() {
+    this.menu = !this.menu;
   }
 }

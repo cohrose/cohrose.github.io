@@ -6,7 +6,6 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -22,6 +21,7 @@ header {
   font-weight: 600;
   font-size: 16px;
   padding: 0 40px;
+  z-index: 6;
   img {
     width: 30px;
     height: 30px;
@@ -34,14 +34,21 @@ header {
       color: var(--pink);
     }
   }
-  i {
-    font-size: 35px;
+  a.code {
+    font-size: 33px;
     position: fixed;
     z-index: 6;
-    top: 40px;
+    color: var(--light-purple);
     &:hover {
+      color: var(--pink);
       cursor: pointer;
     }
+  }
+  i.fa-bars {
+    font-size: 20px;
+  }
+  .header-menu {
+    display: none !important;
   }
 }
 
@@ -90,6 +97,9 @@ main {
 }
 
 @media screen and (max-width: 959px) {
+  header {
+    position: fixed;
+  }
   .social {
     position: relative;
     display: flex;
@@ -97,6 +107,29 @@ main {
     left: 0;
     button {
       margin: 0 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  header {
+    height: 62px;
+    padding: 0 22px;
+    a.code {
+      font-size: 30px;
+    }
+  }
+  header .header-buttons {
+    display: none !important;
+  }
+  header .header-menu {
+    display: block !important;
+    .menu-buttons {
+      position: absolute;
+      display: flex;
+      top: 55px;
+      right: 0;
+      background: var(--purple);
     }
   }
 }

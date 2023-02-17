@@ -1,22 +1,37 @@
-<header id="top">
+<div id="top"></div>
+<header>
   <div fxFlex fxLayout fxFlexAlign="center">
     <div fxFlex>
-      <i
-        class="fa-solid fa-code fa-lg"
-        routerLink="/"
+      <a
         (click)="scroll('top')"
+        routerLink="/"
         matTooltip="Back to Top"
         matTooltipPosition="after"
-      ></i>
+        class="code"
+      >
+        <i class="fa-solid fa-code fa-lg"></i>
+      </a>
     </div>
-    <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px">
-      <button mat-button (click)="scroll('about')">About</button>
-      <button mat-button (click)="scroll('skills')">Skills</button>
-      <button mat-button (click)="scroll('work')">Projects</button>
-      <button mat-button (click)="scroll('contact')">Contact</button>
+    <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" class="header-buttons">
+      <ng-container [ngTemplateOutlet]="menuItems"></ng-container>
+    </div>
+    <div class="header-menu" fxLayout="column">
+      <button mat-icon-button (click)="showMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div fxLayout="column" *ngIf="menu" class="menu-buttons">
+        <ng-container [ngTemplateOutlet]="menuItems"></ng-container>
+      </div>
     </div>
   </div>
 </header>
+
+<ng-template #menuItems>
+  <button mat-button (click)="scroll('about')">About</button>
+  <button mat-button (click)="scroll('skills')">Skills</button>
+  <button mat-button (click)="scroll('work')">Projects</button>
+  <button mat-button (click)="scroll('contact')">Contact</button>
+</ng-template>
 
 <!-- <div class="side-line">
   <div class="line"></div>

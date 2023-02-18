@@ -57,7 +57,6 @@ header {
   bottom: 15px;
   left: 20px;
   z-index: 5;
-  button,
   a {
     display: block;
     margin-bottom: 20px;
@@ -124,12 +123,13 @@ footer {
     display: flex;
     margin: 25px auto 0;
     left: 0;
-    button {
+    a {
       margin: 0 10px;
+      font-size: 23px;
     }
   }
   .pikachu {
-    right: -23px;
+    right: -20px;
     width: 170px;
   }
 }
@@ -157,5 +157,10 @@ footer {
   .pikachu {
     bottom: -15px;
     width: 150px;
+  }
+}
+@media screen and (max-width: 399px) {
+  .pikachu {
+    width: 120px;
   }
 }

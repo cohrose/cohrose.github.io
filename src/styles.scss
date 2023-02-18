@@ -109,9 +109,11 @@ h3 {
   .container {
     padding: 30px 15px;
   }
-
   .section {
     padding-top: 50px;
+  }
+  .tooltip {
+    display: none !important;
   }
 }
 
@@ -124,25 +126,5 @@ h3 {
       height: 100%;
       padding-top: 10px;
     }
-  }
-}
-
-@-webkit-keyframes slidein {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes slidein {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
   }
 }

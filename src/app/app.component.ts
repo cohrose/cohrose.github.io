@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Angular-App';
   menu = false;
-
+  pikachu = false;
   scroll(id: string) {
     this.menu = false;
     let el = document.getElementById(id);
@@ -17,5 +17,9 @@ export class AppComponent {
 
   showMenu() {
     this.menu = !this.menu;
+  }
+
+  showPikachu() {
+    this.pikachu = !this.pikachu;
   }
 }

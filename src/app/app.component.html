@@ -54,30 +54,48 @@
 </main>
 
 <div class="social">
-  <button
+  <a
     mat-icon-button
     matTooltip="LinkedIn"
     matTooltipPosition="after"
     matTooltipClass="tooltip"
+    href="https://www.linkedin.com/in/courtneymedellin/"
+    target="_blank"
   >
     <i class="fa-brands fa-linkedin"></i>
-  </button>
-  <button
+  </a>
+  <a
     mat-icon-button
     matTooltip="Email"
     matTooltipPosition="after"
     matTooltipClass="tooltip"
+    href="mailto:chalt0319@gmail.com"
   >
     <i class="fa-regular fa-envelope"></i>
-  </button>
-  <button
+  </a>
+  <a
     mat-icon-button
     matTooltip="Resume"
     matTooltipPosition="after"
     matTooltipClass="tooltip"
+    href="assets/CourtneyMedellinResume.pdf"
+    target="_blank"
   >
     <i class="fa-regular fa-file"></i>
-  </button>
+  </a>
+</div>
+<div style="position: relative">
+  <img
+    *ngIf="pikachu"
+    class="pikachu"
+    src="assets/pikachu.gif"
+    alt="Pikachu gif"
+    width="200px"
+  />
 </div>
 
-<footer>Designed & Built by Courtney Medellin</footer>
+<footer>
+  Designed
+  <button class="easter-egg" mat-icon-button (click)="showPikachu()">&</button>
+  Built by Courtney Medellin
+</footer>

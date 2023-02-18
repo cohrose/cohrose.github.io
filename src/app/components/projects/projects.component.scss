@@ -32,7 +32,7 @@
   img {
     box-shadow: 13px 13px var(--light-purple);
     border-radius: 5px;
-    height: -webkit-fill-available;
+    height: 100%;
   }
   .title {
     font-size: 25px;
@@ -65,6 +65,9 @@
     &.margin-small {
       margin-top: 30px;
     }
+  }
+  .project-card img {
+    height: auto;
   }
 }
 

@@ -16,6 +16,33 @@ h2 {
   margin-bottom: 30px;
 }
 
+.gif {
+  animation: fadeIn 3s;
+  position: absolute;
+  top: 66vh;
+  right: -60px;
+  .life {
+    position: relative;
+    top: -45px;
+    right: -27px;
+  }
+  img {
+    width: 237px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 959px) {
   h1 {
     margin: 60px 0 0 0;
@@ -31,5 +58,8 @@ h2 {
   }
   .third {
     font-size: 32px;
+  }
+  .gif {
+    display: none !important;
   }
 }

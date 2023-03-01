@@ -8,12 +8,45 @@
   }
 }
 
+.ts-box {
+  position: relative;
+  margin-right: 4px;
+  .box {
+    background: var(--light-purple);
+    display: inline-block;
+    position: relative;
+    border-radius: 1px;
+    width: 30px;
+    height: 30px;
+    top: 2px;
+  }
+  .ts {
+    color: var(--purple);
+    position: relative;
+    right: 22px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
 @media screen and (max-width: 959px) {
   .grid {
     width: 515px;
     font-size: 28px;
     i {
       width: 35px;
+    }
+  }
+  .ts-box {
+    margin-right: 0;
+    .box {
+      width: 26px;
+      height: 26px;
+      top: 3px;
+    }
+    .ts {
+      right: 20px;
+      font-size: 14px;
     }
   }
 }
@@ -24,6 +57,19 @@
     font-size: 20px;
     i {
       width: 25px;
+    }
+  }
+  .ts-box {
+    margin-right: 0;
+    .box {
+      width: 18px;
+      height: 18px;
+      top: 0;
+    }
+    .ts {
+      right: 14px;
+      bottom: 1px;
+      font-size: 10px;
     }
   }
 }

@@ -29,6 +29,11 @@
   }
 }
 
+.fa-brands.fa-markdown {
+  position: relative;
+  right: 6px;
+}
+
 @media screen and (max-width: 959px) {
   .grid {
     width: 515px;
@@ -48,6 +53,9 @@
       right: 20px;
       font-size: 14px;
     }
+  }
+  .fa-brands.fa-markdown {
+    right: 5px;
   }
 }
 
@@ -71,5 +79,8 @@
       bottom: 1px;
       font-size: 10px;
     }
+  }
+  .fa-brands.fa-markdown {
+    right: 4px;
   }
 }
